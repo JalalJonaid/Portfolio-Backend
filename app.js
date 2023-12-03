@@ -1,20 +1,17 @@
-const express = require("express");
-const cors = require("cors");
+const express = require ('express');
+const cors = require('cors');
 const app = express();
-
-const matchupController = require("./controllers/matchupController");
-
+const matchupsController = require('./controllers/matchupsController.js')
 app.use(cors());
 app.use(express.json());
-app.use("/matchup", matchupController);
-
+app.use("/matchups", matchupsController);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Matchup Resource Guide.");
-});
+    res.send("Welcome to K'sante Matchups Guide!");
+  });
+  
+  app.get("*", (req, res) => {
+    res.status(404).json({ success: false, data: { error: "page not found" } });
+  });
 
-app.get("*", (req, res) => {
-  res.status(404).json({ success: false, data: { error: "page not found" } });
-});
-
-module.exports = app;
+  module.exports = app;

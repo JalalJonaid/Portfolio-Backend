@@ -1,6 +1,6 @@
 \c matchup_dev;
 
-INSERT INTO matchups (opponent, grade, winrate, skill_based, item, mythic)
+INSERT INTO matchups (opponent, grade, winrate, skill_based, resistance, mythic)
 VALUES
     ('Garen', 'Very hard', 46, false, 'HP', true),
     ('Gwen', 'Very hard', 45, false, 'MR', true),
